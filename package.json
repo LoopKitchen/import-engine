@@ -1,0 +1,54 @@
+{
+  "name": "@loop_ai/import-engine",
+  "version": "0.2.0",
+  "description": "A CSV import dialog for React and MUI: define a template, check every row, save the clean rows your way.",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LoopKitchen/import-engine.git"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "tsx --test ./test/*.test.mts",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "peerDependencies": {
+    "@mui/material": "^5.12.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@emotion/react": "11.14.0",
+    "@emotion/styled": "11.14.1",
+    "@mui/material": "5.18.0",
+    "@types/jsdom": "20.0.1",
+    "@types/node": "^22.0.0",
+    "@types/react": "18.3.27",
+    "@types/react-dom": "18.3.7",
+    "jsdom": "20.0.3",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "tsup": "8.5.1",
+    "tsx": "4.22.4",
+    "typescript": "5.9.3"
+  }
+}
